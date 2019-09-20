@@ -48,7 +48,7 @@ class _DashBoardBottomContainerState extends State<DashBoardBottomContainer>
               flex: 8,
             ),
             Container(
-              padding: const EdgeInsets.symmetric(horizontal: 40),
+              padding: const EdgeInsets.only(left: 40, right: 40, bottom: 10),
               child: SeeMoreButton(),
             ),
           ],

@@ -25,7 +25,9 @@ class _AvatarContainerState extends State<AvatarContainer> {
                       Icons.arrow_back,
                       color: Colors.white,
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
                   ),
                 ),
                 Center(
