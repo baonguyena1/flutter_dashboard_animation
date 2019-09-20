@@ -1,4 +1,4 @@
-import 'package:dashboard_animation/screens/dashboard_page.dart';
+import 'package:dashboard_animation/screens/dashboard/index.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());

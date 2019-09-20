@@ -1,6 +1,5 @@
-import 'package:dashboard_animation/screens/dashboard_bottom_container.dart';
 import 'package:flutter/material.dart';
-
+import 'dashboard_bottom_container.dart';
 import 'dashboard_top_container.dart';
 
 class DashBoardPage extends StatefulWidget {

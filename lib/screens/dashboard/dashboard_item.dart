@@ -1,65 +1,5 @@
-import 'package:dashboard_animation/screens/see_more_button.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_sequence_animation/flutter_sequence_animation.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-
-class DashBoardBottomContainer extends StatefulWidget {
-  DashBoardBottomContainer({Key key}) : super(key: key);
-
-  _DashBoardBottomContainerState createState() =>
-      _DashBoardBottomContainerState();
-}
-
-class _DashBoardBottomContainerState extends State<DashBoardBottomContainer>
-    with SingleTickerProviderStateMixin {
-  AnimationController _controller;
-  SequenceAnimation _sequenceAnimation;
-
-  @override
-  void initState() {
-    super.initState();
-    _controller = AnimationController(vsync: this);
-    _initialSequenceAnimation();
-    _controller.forward();
-  }
-
-  _initialSequenceAnimation() {
-    _sequenceAnimation = SequenceAnimationBuilder()
-        .addAnimatable(
-            animatable: Tween<double>(begin: -40, end: 20),
-            from: const Duration(milliseconds: 0),
-            to: const Duration(milliseconds: 300),
-            tag: 'see_more_bottom')
-        .animate(_controller);
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Expanded(
-      child: Container(
-        child: Column(
-          children: <Widget>[
-            Expanded(
-              child: ListView.builder(
-                itemCount: 6,
-                itemBuilder: (context, index) => DashBoardItem(),
-              ),
-              flex: 8,
-            ),
-            Expanded(
-              child: Container(
-                padding: const EdgeInsets.symmetric(horizontal: 40),
-                child: SeeMoreButton(),
-              ),
-              flex: 1,
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
 
 class DashBoardItem extends StatelessWidget {
   const DashBoardItem({Key key}) : super(key: key);
@@ -105,7 +45,7 @@ class DashBoardItem extends StatelessWidget {
                           Expanded(
                             child: Text(
                               'USA',
-                              style: TextStyle(color: Colors.grey),
+                              style: TextStyle(color: Colors.black54),
                             ),
                             flex: 8,
                           ),
@@ -114,6 +54,7 @@ class DashBoardItem extends StatelessWidget {
                               alignment: Alignment(1, 0),
                               child: Icon(
                                 FontAwesomeIcons.star,
+                                color: Colors.grey,
                                 size: 15,
                               ),
                             ),
@@ -125,7 +66,6 @@ class DashBoardItem extends StatelessWidget {
                     Text(
                       'Rent Surfing on Califonia',
                       style: TextStyle(
-                          color: Colors.grey,
                           fontWeight: FontWeight.bold,
                           fontSize: 16),
                     ),
@@ -136,7 +76,7 @@ class DashBoardItem extends StatelessWidget {
                           Expanded(
                             child: Text(
                               'Price: 1000.0',
-                              style: TextStyle(color: Colors.grey),
+                              style: TextStyle(color: Colors.black54),
                             ),
                             flex: 8,
                           ),
@@ -145,8 +85,9 @@ class DashBoardItem extends StatelessWidget {
                               'More',
                               textAlign: TextAlign.right,
                               style: TextStyle(
-                                  color: Colors.grey,
-                                  fontWeight: FontWeight.bold,
+                                  fontSize: 11,
+                                  color: Colors.grey[600],
+                                  fontStyle: FontStyle.italic,
                                   decoration: TextDecoration.underline),
                             ),
                             flex: 2,
